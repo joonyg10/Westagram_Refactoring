@@ -8,30 +8,34 @@ const Login = () => {
   const isValid =
     userInput.email.includes("@") && userInput.password.length > 5;
 
-  const handleUserInput = (e) => {
+  const updateUserInput = (e) => {
     const type = e.target?.dataset?.type;
     setUserInput((prevInput) => ({ ...prevInput, [type]: e.target.value }));
   };
 
-  const goToMain = () => navigate("/main");
-  const goToMainByEnter = (e) => {
+  function goToMain() {
+    isValid && navigate("/main");
+  }
+
+  function goToMainByEnter(e) {
+    e.preventDefault();
     if (e.key === "Enter") goToMain();
-  };
+  }
 
   return (
     <section className="login__box">
-      <h2> Westagram</h2>
-      <form className="login__form">
-        <input type="text" data-type="email" onChange={handleUserInput} />
+      <h2 className="login-title"> Westagram</h2>
+      <form className="login__form" onKeyPress={goToMainByEnter}>
+        <input type="text" data-type="email" onChange={updateUserInput} />
         <input
           type="password"
           data-type="password"
-          onChange={handleUserInput}
+          onChange={updateUserInput}
         />
         <button className={`login__btn ${isValid && "active"}`}>로그인</button>
       </form>
       <div className="divider">
-        <spa>또는</spa>
+        <span>또는</span>
       </div>
     </section>
   );

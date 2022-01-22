@@ -1,13 +1,14 @@
+@use "../../styles/mixin.scss" as mixin;
+@use "../../styles/color.scss" as color;
+
 .login__box {
-  justify-self: center;
-  align-self: center;
   max-width: 25rem;
   padding: 2rem;
   border-radius: 0.75rem;
   box-shadow: 1px 1px 2px hsl(0, 0%, 66%), -1px -1px 2px hsl(0, 0%, 83%);
   text-align: center;
 
-  h1 {
+  h2 {
     font-size: 3rem;
   }
 
@@ -16,11 +17,15 @@
       width: 100%;
       padding: 1rem;
       border: none;
-      border-bottom: 1px solid hsl(0, 0%, 83%);
+      border-bottom: 1px solid color.$gray-200;
     }
 
     .login__btn {
+      --btn-background: color.$primary-400;
+      background-color: var(--btn-background);
+
       &.active {
+        --btn-background: color.$primary-500;
       }
     }
   }
