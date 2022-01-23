@@ -1,0 +1,29 @@
+@use "../../styles/mixin" as mixin;
+
+.story {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  align-items: center;
+  max-width: 45rem;
+  padding: 1.5rem 0.25em;
+  border: 2px solid #000;
+
+  .arrow {
+    // position: absolute;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .carousel__box {
+    overflow: hidden;
+  }
+
+  .carousel__slider {
+    @include mixin.flex();
+    --gap: 1em;
+  }
+}

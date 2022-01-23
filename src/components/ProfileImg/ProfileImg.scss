@@ -1,0 +1,17 @@
+@use "../../styles/color.scss" as color;
+
+.profile-image {
+  display: inline-block;
+  text-align: center;
+
+  img {
+    position: relative;
+    max-width: 5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  p {
+    font-weight: 500;
+  }
+}
