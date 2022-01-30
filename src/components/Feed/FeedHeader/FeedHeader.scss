@@ -1,0 +1,18 @@
+@use "../../../styles/mixin" as mixin;
+
+.feed-header {
+  @include mixin.flex;
+  --gap: 1.125em;
+  padding: 0.875rem 1rem;
+  background-color: lightpink;
+
+  &__writer {
+    font-size: 1.125rem;
+    font-weight: bolder;
+  }
+
+  .util-btn {
+    display: inline-block;
+    margin-left: auto;
+  }
+}
