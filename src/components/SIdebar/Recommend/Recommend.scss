@@ -1,0 +1,11 @@
+@use "../../../styles/mixin" as mixin;
+@use "../../../styles/color" as color;
+
+.recommend {
+  @include mixin.flex;
+
+  .follow-btn {
+    color: color.$primary_400;
+    font-weight: bold;
+  }
+}

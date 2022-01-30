@@ -1,0 +1,8 @@
+@use "../../styles/mixin" as mixin;
+
+.main__sidebar {
+  header {
+    @include mixin.flex;
+    gap: 1em;
+  }
+}
