@@ -3,9 +3,22 @@
 
 .recommend {
   @include mixin.flex;
+  --gap: 0.875em;
+  margin-top: 1rem;
+
+  .box {
+    h4 {
+      font-size: 1.125rem;
+    }
+    p {
+      color: color.$gray-500;
+    }
+  }
 
   .follow-btn {
+    display: inline-block;
+    margin-left: auto;
     color: color.$primary_400;
-    font-weight: bold;
+    font-weight: 600;
   }
 }

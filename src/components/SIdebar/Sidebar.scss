@@ -1,8 +1,43 @@
+@use "../../styles//color" as color;
 @use "../../styles/mixin" as mixin;
 
 .main__sidebar {
+  // border: 2px solid red;
+
+  .sidebar-box {
+    position: fixed;
+    width: 20rem;
+  }
+
   header {
     @include mixin.flex;
     gap: 1em;
+  }
+
+  .box {
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-weight: 600;
+      color: color.$gray-500;
+    }
+  }
+
+  .sidebar__intro {
+    @include mixin.flex;
+    justify-content: space-between;
+    margin-block: 1.25rem;
+
+    h2 {
+      color: color.$gray-500;
+      font-size: 1.125rem;
+    }
+
+    p.show-all {
+      font-size: 0.925rem;
+      font-weight: 600;
+    }
   }
 }

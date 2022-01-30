@@ -20,9 +20,9 @@ function Story() {
       <IoIosArrowDropleftCircle
         onClick={slideToPrev}
         size={36}
-        className="arrow left"
+        className="arrow"
       />
-      <section className="carousel__box">
+      <section className="carousel">
         <ul className="carousel__slider">
           {StoryData.map(({ id, imgUrl, username }) => (
             <li key={id}>
@@ -34,7 +34,7 @@ function Story() {
       <IoIosArrowDroprightCircle
         onClick={slideToNext}
         size={36}
-        className="arrow right"
+        className="arrow"
       />
     </section>
   );

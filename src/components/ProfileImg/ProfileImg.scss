@@ -6,9 +6,10 @@
 
   img {
     position: relative;
-    max-width: 5rem;
+    max-width: var(--size);
     aspect-ratio: 1;
     border-radius: 50%;
+    cursor: pointer;
   }
 
   p {
