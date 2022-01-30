@@ -1,5 +1,6 @@
 import Story from "../../components/Story/Story";
 import Sidebar from "../../components/SIdebar/Sidebar";
+import Feed from "../../components/Feed/Feed";
 import "./Main.scss";
 
 function Main() {
@@ -7,7 +8,7 @@ function Main() {
     <main className="main">
       <Story />
       <Sidebar />
-      <div>Hello world</div>
+      <Feed />
     </main>
   );
 }
