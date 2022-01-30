@@ -1,0 +1,11 @@
+@use "../../../styles/mixin" as mixin;
+
+.feedicons {
+  @include mixin.flex;
+  padding-inline: 1rem;
+
+  .bookmark {
+    display: inline-block;
+    margin-left: auto;
+  }
+}
