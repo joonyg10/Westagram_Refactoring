@@ -1,0 +1,21 @@
+@use "../../../styles/mixin" as mixin;
+@use "../../../styles/color" as color;
+
+.navigator {
+  @include mixin.flex;
+  justify-content: center;
+  padding-top: 1.25rem;
+
+  &__dot {
+    width: 0.875em;
+    aspect-ratio: 1/1;
+    border: 1px solid color.$gray-500;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s linear;
+
+    &.current {
+      background-color: color.$primary-400;
+    }
+  }
+}
