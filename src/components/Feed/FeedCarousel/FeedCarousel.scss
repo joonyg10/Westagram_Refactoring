@@ -1,0 +1,50 @@
+@use "../../../styles/mixin" as mixin;
+.feed-carousel {
+  --feed-img-height: 60vh;
+  --gap: 0.5em;
+  --slide-width: calc(-100% - var(--gap));
+
+  position: relative;
+  min-height: var(--feed-img-height);
+  overflow: hidden;
+
+  &__slider {
+    @include mixin.flex;
+    position: absolute;
+    transform: translateX(calc(var(--currIdx) * var(--slide-width)));
+    transition: all 0.4s ease-in;
+
+    li {
+      min-width: 100%;
+      max-height: var(--feed-img-height);
+
+      img {
+        min-height: var(--feed-img-height);
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    &.left {
+      left: 2%;
+    }
+
+    &.right {
+      right: 2%;
+    }
+  }
+}
