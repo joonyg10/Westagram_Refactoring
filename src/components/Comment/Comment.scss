@@ -1,0 +1,35 @@
+@use "../../styles/color";
+@use "../../styles/mixin";
+
+.comment {
+  position: relative;
+  border: 2px solid aqua;
+
+  &__front {
+    position: absolute;
+    inset: 0;
+    @include mixin.flex;
+    padding-inline: var(--feed-padding-inline);
+    background-color: #fff;
+    cursor: grab;
+
+    svg {
+      display: inline-block;
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+
+  &__delete {
+    @include mixin.flex;
+    justify-content: flex-end;
+    gap: 0;
+
+    svg {
+      width: 8%;
+      padding: 0.25em;
+      background-color: color.$bg-delete;
+      color: #fff;
+    }
+  }
+}

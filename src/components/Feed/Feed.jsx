@@ -2,6 +2,7 @@ import FeedHeader from "./FeedHeader/FeedHeader";
 import FeedCarousel from "./FeedCarousel/FeedCarousel";
 import FeedIcons from "./FeedIcons/FeedIcons";
 import "./Feed.scss";
+import FeedComment from "./FeedComment/FeedComment";
 
 const Feed = () => {
   return (
@@ -9,6 +10,7 @@ const Feed = () => {
       <FeedHeader />
       <FeedCarousel />
       <FeedIcons />
+      <FeedComment />
     </section>
   );
 };
