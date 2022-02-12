@@ -3,11 +3,10 @@
 .feed-header {
   @include mixin.flex;
   --gap: 1.125em;
-  padding: 0.875rem 1rem;
-  background-color: lightpink;
+  padding: 1.25em var(--feed-padding-inline);
 
   &__writer {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: bolder;
   }
 
