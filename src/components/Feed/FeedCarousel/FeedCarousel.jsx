@@ -3,7 +3,7 @@ import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
-import Navigator from "../Navigator/Navigator";
+import Navigator from "../../Navigator/Navigator";
 import "./FeedCarousel.scss";
 
 const IMAGES = [
