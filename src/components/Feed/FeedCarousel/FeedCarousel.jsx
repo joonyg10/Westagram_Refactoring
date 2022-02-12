@@ -5,19 +5,12 @@ import {
 } from "react-icons/io";
 import Navigator from "../../Navigator/Navigator";
 import "./FeedCarousel.scss";
-
-const IMAGES = [
-  "./images/stories/story1.jpg",
-  "./images/stories/story2.jpg",
-  "./images/stories/story3.jpg",
-  "./images/stories/story4.jpg",
-  "./images/stories/story5.jpg",
-];
+import { IMAGES, HIDDEN } from "../../../constant/Feed";
 
 function FeedCarousel() {
   const [currIdx, setCurrImgIdx] = useState(0);
-  const leftArrowHidden = currIdx === 0 && "hidden";
-  const rightArrowHidden = currIdx === 4 && "hidden";
+  const leftArrowHidden = currIdx === 0 && HIDDEN;
+  const rightArrowHidden = currIdx === 4 && HIDDEN;
 
   const slidePrevImg = () => setCurrImgIdx((prevIdx) => prevIdx - 1);
   const slideNextImg = () => setCurrImgIdx((prevIdx) => prevIdx + 1);
@@ -34,7 +27,7 @@ function FeedCarousel() {
         <ul className="feed-carousel__slider" style={{ "--currIdx": currIdx }}>
           {IMAGES.map((imgUrl, idx) => (
             <li key={idx.toString()}>
-              <img src={imgUrl} alt="carousel" />
+              <img src={imgUrl} alt={imgUrl} />
             </li>
           ))}
         </ul>
