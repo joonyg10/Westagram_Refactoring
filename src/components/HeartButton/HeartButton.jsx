@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import "./HeartButton.scss";
 
 function HeartButton() {
   const [isClicked, setIsClicked] = useState(false);
@@ -8,10 +9,14 @@ function HeartButton() {
     setIsClicked((prevClicked) => !prevClicked);
   }
 
-  return (
-    <div onClick={clickHeartBtn}>
-      {isClicked ? <AiOutlineHeart /> : <AiFillHeart />}
-    </div>
+  return isClicked ? (
+    <AiOutlineHeart className="heart" size={34} onClick={clickHeartBtn} />
+  ) : (
+    <AiFillHeart
+      className="heart filled-heart"
+      size={34}
+      onClick={clickHeartBtn}
+    />
   );
 }
 
