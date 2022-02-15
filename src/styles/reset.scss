@@ -12,7 +12,8 @@ body {
   padding-top: 7rem;
 }
 
-ul {
+ul,
+li {
   list-style: none;
 }
 
@@ -24,4 +25,19 @@ img {
   display: block;
   max-width: 100%;
   object-fit: cover;
+}
+
+input,
+button,
+textarea {
+  border: none;
+  background: transparent;
+  resize: none;
+  outline: none;
+}
+
+a,
+button,
+svg {
+  cursor: pointer;
 }
