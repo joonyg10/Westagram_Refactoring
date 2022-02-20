@@ -1,24 +1,28 @@
-@use "../../styles/color";
-@use "../../styles/mixin";
+@use "../../styles/" as *;
 
 .comment {
   position: relative;
   height: 3rem;
 
   &__front {
-    // TODO: movedX의 최대치 설정 -> delete 아이템2개 = 20% 까지만
-    // --max-movedX: calc(100% / 5);
+    $_movedx: var(--movedX);
+    $lowerRange: -20%;
+    $upperRange: 0px;
+    $finalMove: clamp($lowerRange, $_movedx, $upperRange);
+
     position: absolute;
     inset: 0;
-    @include mixin.flex;
+    @include mixin-flex();
     padding-inline: var(--feed-padding-inline);
     background-color: #fff;
-    // transform: translateX(-50%);
+    transform: translateX($finalMove);
+    transition: transform 350ms linear;
 
     .comment__writer {
       font-size: 1.125rem;
       font-weight: bold;
     }
+
     .comment__content {
       font-size: 0.975rem;
     }
@@ -26,28 +30,28 @@
     svg {
       display: inline-block;
       margin-left: auto;
-      cursor: pointer;
     }
   }
 
   &__delete {
-    @include mixin.flex;
+    @include mixin-flex();
     justify-content: flex-end;
     gap: 0;
     height: 100%;
 
     .icon-wrapper {
-      @include mixin.flex;
+      @include mixin-flex();
       justify-content: center;
       width: 10%;
       height: 100%;
-      background-color: color.$bg-delete;
+      background-color: $color-bg-delete;
+
       text-align: center;
+      cursor: pointer;
     }
 
     svg {
       color: #fff;
-      cursor: pointer;
     }
   }
 }
