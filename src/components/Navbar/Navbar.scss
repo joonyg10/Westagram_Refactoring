@@ -1,0 +1,38 @@
+@use "../../styles/" as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  @include mixin-flex();
+  justify-content: space-between;
+  padding: 0.875rem 5rem;
+  border-bottom: 2px solid $color-gray-200;
+  background-color: #fff;
+
+  h2.logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &__search {
+    @include mixin-flex();
+    padding: 0.5em 1.25em;
+    border-radius: 0.25em;
+    border: 1px solid $color-gray-200;
+
+    input {
+      padding: 0.65rem 2.5rem;
+      padding-left: 1rem;
+      font-size: 0.975rem;
+    }
+  }
+
+  ul {
+    @include mixin-flex();
+    gap: 1em;
+  }
+}
