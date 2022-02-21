@@ -9,13 +9,14 @@
 
   @include mixin-flex();
   justify-content: space-between;
-  padding: 0.875rem 5rem;
+  padding: 0.875rem 15vw;
   border-bottom: 2px solid $color-gray-200;
   background-color: #fff;
 
   h2.logo {
     font-size: 2rem;
     font-weight: bold;
+    cursor: pointer;
   }
 
   &__search {
@@ -31,7 +32,8 @@
     }
   }
 
-  ul {
+  ul.links {
+    position: relative;
     @include mixin-flex();
     gap: 1em;
   }

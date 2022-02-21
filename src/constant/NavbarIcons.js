@@ -6,6 +6,7 @@ export const ALLICONS = {
   heart: "heart",
   search: "search",
   user: "user",
+  bookmark: "bookmark",
   cog: "cog",
   change: "change",
 };
@@ -19,8 +20,8 @@ export const ICONS = {
 };
 
 export const DROPDOWN_ICONS = {
-  profile: "profile",
-  bookmark: "bookmark",
-  cog: "cog",
-  change: "change",
+  user: "프로필",
+  bookmark: "저장됨",
+  cog: "설정",
+  change: "계정전환",
 };
