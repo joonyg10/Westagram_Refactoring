@@ -1,26 +1,29 @@
-@use "../../../styles/mixin" as mixin;
+@use "../../../styles" as *;
 
 .feed-carousel {
-  --feed-img-height: 60vh;
   --gap: 0.5em;
-  --slide-width: calc(-100% - var(--gap));
+  $feed-img-height: 60vh;
+
+  $slide-width: calc(-100% - var(--gap));
+  $currIdx: var(--currIdx);
+  $slideOffset: calc($currIdx * $slide-width);
 
   position: relative;
-  min-height: var(--feed-img-height);
+  min-height: $feed-img-height;
   overflow: hidden;
 
   &__slider {
-    @include mixin.flex;
+    @include mixin-flex;
     position: absolute;
-    transform: translateX(calc(var(--currIdx) * var(--slide-width)));
+    transform: translateX($slideOffset);
     transition: all 0.4s ease-in;
 
     li {
       min-width: 100%;
-      max-height: var(--feed-img-height);
+      max-height: $feed-img-height;
 
       img {
-        min-height: var(--feed-img-height);
+        min-height: $feed-img-height;
       }
     }
   }
@@ -37,7 +40,7 @@
     }
 
     &.hidden {
-      display: none;
+      z-index: -1;
     }
 
     &.left {

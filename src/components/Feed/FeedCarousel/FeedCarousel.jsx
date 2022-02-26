@@ -1,11 +1,8 @@
 import { useState } from "react";
-import {
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle,
-} from "react-icons/io";
+import Icon from "../../Icon/Icon";
 import Navigator from "../../Navigator/Navigator";
-import "./FeedCarousel.scss";
 import { IMAGES, HIDDEN } from "../../../constant/Feed";
+import "./FeedCarousel.scss";
 
 function FeedCarousel() {
   const [currIdx, setCurrImgIdx] = useState(0);
@@ -14,14 +11,15 @@ function FeedCarousel() {
 
   const slidePrevImg = () => setCurrImgIdx((prevIdx) => prevIdx - 1);
   const slideNextImg = () => setCurrImgIdx((prevIdx) => prevIdx + 1);
-  const navigateToImg = (selectedIdx) => setCurrImgIdx(selectedIdx);
+  const showClickedSlide = (selectedIdx) => setCurrImgIdx(selectedIdx);
 
   return (
     <>
       <section className="feed-carousel">
-        <IoIosArrowDropleftCircle
-          size={40}
+        <Icon
+          name="left-arrow"
           className={`arrow left ${leftArrowHidden}`}
+          size={40}
           onClick={slidePrevImg}
         />
         <ul className="feed-carousel__slider" style={{ "--currIdx": currIdx }}>
@@ -31,13 +29,18 @@ function FeedCarousel() {
             </li>
           ))}
         </ul>
-        <IoIosArrowDroprightCircle
-          size={40}
+        <Icon
+          name="right-arrow"
           className={`arrow right ${rightArrowHidden}`}
+          size={40}
           onClick={slideNextImg}
         />
       </section>
-      <Navigator currIdx={currIdx} navigateToImg={navigateToImg} maxDots={5} />
+      <Navigator
+        currIdx={currIdx}
+        showClickedSlide={showClickedSlide}
+        dotsCnt={5}
+      />
     </>
   );
 }

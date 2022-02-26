@@ -11,7 +11,7 @@
   }
 
   .util-btn {
-    display: inline-block;
+    // flex가 적용되어 있기에 flex-item이 되었기에 margin이 유효!
     margin-left: auto;
   }
 }

@@ -6,7 +6,7 @@ import FeedComment from "./FeedComment/FeedComment";
 
 const Feed = () => {
   return (
-    <section className="feed">
+    <section className="feed" aria-label="feed">
       <FeedHeader />
       <FeedCarousel />
       <FeedIcons />
