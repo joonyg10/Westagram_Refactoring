@@ -1,11 +1,11 @@
 @use "../../styles" as *;
 
 .story {
-  --arrow-area: min-content;
+  $arrow-area: min-content;
 
   position: relative;
   display: grid;
-  grid-template-columns: var(--arrow-area) auto var(--arrow-area);
+  grid-template-columns: $arrow-area auto $arrow-area;
   align-items: center;
   gap: 0.5em;
 
