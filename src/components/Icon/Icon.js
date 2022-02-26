@@ -8,10 +8,15 @@ import {
 import { BiSearchAlt } from "react-icons/bi";
 import { BsBookmark } from "react-icons/bs";
 import { FaRegPaperPlane, FaCog } from "react-icons/fa";
+import {
+  IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
 import { MdOutlineChangeCircle } from "react-icons/md";
 import { ALLICONS } from "../../constant/NavbarIcons";
 
-function Icon({ name }) {
+function Icon(props) {
+  const { name } = props;
   switch (name) {
     case ALLICONS.home:
       return <AiFillHome size={32} />;
@@ -33,7 +38,10 @@ function Icon({ name }) {
       return <FaCog size={28} />;
     case ALLICONS.change:
       return <MdOutlineChangeCircle size={28} />;
-
+    case ALLICONS.leftArrow:
+      return <IoIosArrowDropleftCircle {...props} />;
+    case ALLICONS.rightArrow:
+      return <IoIosArrowDroprightCircle {...props} />;
     default:
       return <></>;
   }

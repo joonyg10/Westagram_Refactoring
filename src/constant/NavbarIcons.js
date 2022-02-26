@@ -9,6 +9,8 @@ export const ALLICONS = {
   bookmark: "bookmark",
   cog: "cog",
   change: "change",
+  leftArrow: "left-arrow",
+  rightArrow: "right-arrow",
 };
 
 export const ICONS = {

@@ -6,6 +6,7 @@
 
   img {
     position: relative;
+    min-width: var(--size);
     max-width: var(--size);
     aspect-ratio: 1;
     border-radius: 50%;

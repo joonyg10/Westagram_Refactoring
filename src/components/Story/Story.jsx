@@ -1,40 +1,54 @@
+import { useState } from "react";
 import ProfileImg from "../ProfileImg/ProfileImg";
-import {
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle,
-} from "react-icons/io";
+import Icon from "../Icon/Icon";
 import { StoryData } from "./StoryData";
 import "./Story.scss";
 
 function Story() {
+  const [currIdx, setCurrIdx] = useState(0);
+
   const slideToPrev = () => {
-    console.log("slide to left");
+    const nextIdx = currIdx - 2;
+    nextIdx >= 3 ? slideToNextIdx(nextIdx) : doNotSlideIdxOverflown(0);
   };
 
   const slideToNext = () => {
-    console.log("right arrow is cliked");
+    const nextIdx = currIdx + 2;
+    const lastIdx = StoryData.length - 6;
+    nextIdx > lastIdx
+      ? doNotSlideIdxOverflown(lastIdx)
+      : slideToNextIdx(nextIdx);
   };
+
+  function slideToNextIdx(nextIdx) {
+    setCurrIdx(nextIdx);
+  }
+  function doNotSlideIdxOverflown(lastIdx) {
+    setCurrIdx(lastIdx);
+  }
 
   return (
     <section className="story">
-      <IoIosArrowDropleftCircle
-        onClick={slideToPrev}
-        size={36}
+      <Icon
+        name="left-arrow"
         className="arrow"
+        size={36}
+        onClick={slideToPrev}
       />
       <section className="carousel">
-        <ul className="carousel__slider">
+        <ul className="carousel__slider" style={{ "--currIdx": `${currIdx}` }}>
           {StoryData.map(({ id, imgUrl, username }) => (
             <li key={id}>
-              <ProfileImg id={id} imgUrl={imgUrl} username={username} />
+              <ProfileImg imgUrl={imgUrl} username={username} />
             </li>
           ))}
         </ul>
       </section>
-      <IoIosArrowDroprightCircle
-        onClick={slideToNext}
-        size={36}
+      <Icon
+        name="right-arrow"
         className="arrow"
+        size={36}
+        onClick={slideToNext}
       />
     </section>
   );
