@@ -1,0 +1,36 @@
+@use "../../styles/" as *;
+
+.profile__dropdown {
+  position: absolute;
+  top: calc(100% + 2rem);
+  right: -10px;
+  width: 80%;
+  flex-direction: column;
+  border: 1px solid #000;
+  border-radius: 0.5em;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px lightgray;
+  transform: scaleY(var(--scaleY));
+  transform-origin: top;
+  transition: transform 350ms ease-in;
+
+  .dropdown__list {
+    @include mixin-flex();
+    padding-block: 0.975rem;
+    padding-left: 0.85em;
+    cursor: pointer;
+
+    .dropdown__description {
+      margin-left: 0.5em;
+      font-size: 1rem;
+    }
+
+    &:last-child {
+      padding-left: 1.5rem;
+    }
+
+    &:hover {
+      background-color: $color-gray-100;
+    }
+  }
+}
