@@ -6,7 +6,7 @@ import "./Comment.scss";
 
 let animationID;
 
-function Comment() {
+function Comment({ comment, deleteComment }) {
   const [startX, setStartX] = useState(0);
   const [draggedX, setDraggedX] = useState(0);
   const movedX = draggedX - startX;
@@ -39,12 +39,12 @@ function Comment() {
         onMouseMove={updatedDraggedX}
         onMouseUp={finishDrag}
       >
-        <h4 className="comment__writer">enna</h4>
-        <p className="comment__content">Comments Here</p>
+        <h4 className="comment__writer">{comment.username}</h4>
+        <p className="comment__content">{comment.comment}</p>
         <HeartButton size="sm" />
       </section>
       <section className="comment__delete">
-        <div className="icon-wrapper">
+        <div className="icon-wrapper" onClick={() => deleteComment(comment.id)}>
           <FaRegTrashAlt size={28} />
         </div>
         <div className="icon-wrapper" onClick={resetDraggedComment}>

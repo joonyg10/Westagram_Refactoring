@@ -11,14 +11,14 @@ function HeartButton({ size = "md" }) {
   }
 
   return isClicked ? (
-    <AiOutlineHeart
-      className="heart"
+    <AiFillHeart
+      className="heart filled-heart"
       size={heartSize}
       onClick={clickHeartBtn}
     />
   ) : (
-    <AiFillHeart
-      className="heart filled-heart"
+    <AiOutlineHeart
+      className="heart"
       size={heartSize}
       onClick={clickHeartBtn}
     />
