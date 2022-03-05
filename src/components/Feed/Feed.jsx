@@ -9,6 +9,7 @@ const Feed = () => {
   const [comments, setComments] = useState([]);
 
   function addNewComment(newComment) {
+    // FIXME: 만약 빈 배열인 경우 lastIdx 조정!
     const lastCommentIdx = comments.length - 1;
     const nextID = comments[lastCommentIdx].id + 1;
     setComments((prevComments) => [

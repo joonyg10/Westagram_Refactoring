@@ -11,6 +11,7 @@ export const ALLICONS = {
   change: "change",
   leftArrow: "left-arrow",
   rightArrow: "right-arrow",
+  dots: "dots",
 };
 
 export const ICONS = {

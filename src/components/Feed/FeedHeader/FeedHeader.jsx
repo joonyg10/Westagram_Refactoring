@@ -1,5 +1,5 @@
 import ProfileImg from "../../ProfileImg/ProfileImg";
-import { BsThreeDots } from "react-icons/bs";
+import Icon from "../../Icon/Icon";
 import "./FeedHeader.scss";
 
 function FeedHeader() {
@@ -7,7 +7,7 @@ function FeedHeader() {
     <header className="feed-header">
       <ProfileImg imgUrl="./images/stories/story2.jpg" size="sm" />
       <p className="feed-header__writer">Username</p>
-      <BsThreeDots size={28} className="util-btn" />
+      <Icon className="util-btn" />
     </header>
   );
 }

@@ -6,7 +6,7 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { BiSearchAlt } from "react-icons/bi";
-import { BsBookmark } from "react-icons/bs";
+import { BsBookmark, BsThreeDots } from "react-icons/bs";
 import { FaRegPaperPlane, FaCog } from "react-icons/fa";
 import {
   IoIosArrowDropleftCircle,
@@ -38,6 +38,8 @@ function Icon(props) {
       return <FaCog size={28} />;
     case ALLICONS.change:
       return <MdOutlineChangeCircle size={28} />;
+    case ALLICONS.dots:
+      return <BsThreeDots size={28} />;
     case ALLICONS.leftArrow:
       return <IoIosArrowDropleftCircle {...props} />;
     case ALLICONS.rightArrow:
