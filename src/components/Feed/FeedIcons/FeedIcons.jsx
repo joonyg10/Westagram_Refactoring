@@ -5,12 +5,12 @@ import "./FeedIcons.scss";
 
 function FeedIcons() {
   return (
-    <section className="feedicons">
+    <div className="feedicons">
       <HeartButton />
       <FaRegComment size={32} />
       <FaRegPaperPlane size={32} />
       <FiBookmark size={32} className="bookmark" />
-    </section>
+    </div>
   );
 }
 
