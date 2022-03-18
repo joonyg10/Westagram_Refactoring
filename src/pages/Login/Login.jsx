@@ -13,30 +13,31 @@ const Login = () => {
     setUserInput((prevInput) => ({ ...prevInput, [type]: e.target.value }));
   };
 
-  function goToMain() {
-    isValid && navigate("/main");
-  }
-
-  function goToMainByEnter(e) {
+  function goToMain(e) {
     e.preventDefault();
-    if (e.key === "Enter") goToMain();
+    isValid && navigate("/");
   }
 
   return (
     <section className="login__box">
-      <h2 className="login-title"> Westagram</h2>
-      <form className="login__form" onKeyPress={goToMainByEnter}>
-        <input type="text" data-type="email" onChange={updateUserInput} />
+      <h2 className="login-title">Westagram</h2>
+      <form className="login__form" onSubmit={goToMain}>
+        <input
+          type="text"
+          value={userInput["email"]}
+          data-type="email"
+          onInput={updateUserInput}
+          placeholder="ID"
+        />
         <input
           type="password"
+          value={userInput.password}
           data-type="password"
-          onChange={updateUserInput}
+          onInput={updateUserInput}
+          placeholder="password"
         />
         <button className={`login__btn ${isValid && "active"}`}>로그인</button>
       </form>
-      <div className="divider">
-        <span>또는</span>
-      </div>
     </section>
   );
 };

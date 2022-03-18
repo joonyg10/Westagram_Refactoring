@@ -1,8 +1,8 @@
-@use "../../styles/mixin.scss" as mixin;
-@use "../../styles/color.scss" as color;
+@use "../../styles/" as *;
 
 .login__box {
-  max-width: 25rem;
+  width: 45rem;
+  margin-top: 10vw;
   padding: 2rem;
   border-radius: 0.75rem;
   box-shadow: 1px 1px 2px hsl(0, 0%, 66%), -1px -1px 2px hsl(0, 0%, 83%);
@@ -15,17 +15,24 @@
   .login__form {
     input {
       width: 100%;
+      margin-block: 1.5rem;
       padding: 1rem;
-      border: none;
-      border-bottom: 1px solid color.$gray-200;
+      border-bottom: 1px solid $color-gray-200;
     }
 
     .login__btn {
-      --btn-background: color.$primary-400;
-      background-color: var(--btn-background);
+      width: 100%;
+      margin-top: 3rem;
+      padding: 2em 3em;
+      background-color: $color-primary-200;
+      border-radius: 2.5em;
+
+      &:hover {
+        opacity: 0.8;
+      }
 
       &.active {
-        --btn-background: color.$primary-500;
+        background-color: $color-primary-400;
       }
     }
   }
