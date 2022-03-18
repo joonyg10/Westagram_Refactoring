@@ -39,7 +39,7 @@ function Story() {
         <ul className="carousel__slider" style={{ "--currIdx": `${currIdx}` }}>
           {StoryData.map(({ id, imgUrl, username }) => (
             <li key={id}>
-              <ProfileImg imgUrl={imgUrl} username={username} />
+              <ProfileImg imgUrl={imgUrl} username={username} gradient />
             </li>
           ))}
         </ul>

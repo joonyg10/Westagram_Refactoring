@@ -13,6 +13,7 @@
       content: "";
       position: absolute;
       border-radius: 50%;
+      opacity: var(--gradientShow, 0);
     }
 
     &::before {
