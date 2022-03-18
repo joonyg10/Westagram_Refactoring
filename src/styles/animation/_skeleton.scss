@@ -1,0 +1,20 @@
+@use "../color" as color;
+@use "../constant" as constant;
+
+@mixin loading {
+  @keyframes skeletonLoading {
+    to {
+      background-position: left;
+    }
+  }
+
+  @keyframes loadingEnded {
+    to {
+      background: color.$insta-gradient;
+      z-index: constant.$z-index-gradient;
+    }
+  }
+
+  animation: skeletonLoading 1s linear alternate 3,
+    loadingEnded 500ms linear 3.5s forwards;
+}

@@ -1,5 +1,5 @@
-// @forward "./color";
 @forward "./color" as color-*;
 @forward "./mixin" as mixin-*;
 @forward "./components" as components-*;
 @forward "./animation/" as animation-*;
+@forward "./constant" as constant-*;
