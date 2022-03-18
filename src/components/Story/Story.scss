@@ -25,13 +25,14 @@
   }
 
   .carousel__slider {
-    @include mixin-flex();
-    --gap: 0.75em;
-
     $currIdx: var(--currIdx);
     $offset: -10%;
     $slideOffset: calc($currIdx * $offset);
 
+    @include mixin-flex();
+    --gap: 0.75em;
+
+    padding: 0.375em;
     transform: translateX($slideOffset);
     transition: all 0.4s linear;
   }
