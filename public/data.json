@@ -1,7 +1,7 @@
 {
   "feedComments": [
     { "id": 1, "username": "enna", "comment": "Hello world" },
-    { "id": 2, "username": "mike", "comment": "아영님도 안쓰쎴잖아요" },
+    { "id": 2, "username": "mike", "comment": "Hi there" },
     {
       "id": 3,
       "username": "Park",

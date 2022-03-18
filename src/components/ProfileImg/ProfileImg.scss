@@ -1,8 +1,33 @@
-@use "../../styles/color.scss" as color;
+@use "../../styles/" as *;
 
 .profile-image {
+  position: relative;
   display: inline-block;
   text-align: center;
+
+  &__wrapper {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    &::before {
+      z-index: $constant-z-index-gray;
+      inset: -1.2px;
+      background: $color-gray-200;
+    }
+
+    &::after {
+      inset: -3px;
+      z-index: 1000;
+      background: darkgrey $color-skeleton right / 200%;
+      @include animation-loading();
+    }
+  }
 
   img {
     position: relative;
@@ -11,6 +36,7 @@
     aspect-ratio: 1;
     border-radius: 50%;
     cursor: pointer;
+    z-index: $constant-z-index-img;
   }
 
   p {
